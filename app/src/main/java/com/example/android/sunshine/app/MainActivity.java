@@ -50,10 +50,16 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
                         .replace(R.id.weather_detail_container,
                                 new DetailFragment(), DETAILFRAGMENT_TAG)
                         .commit();
+
             }
         } else {
             mTwoPane = false;
+            getSupportActionBar().setElevation(0f);
         }
+
+        ForecastFragment forecastFragment = ((ForecastFragment) getSupportFragmentManager()
+                                .findFragmentById(R.id.fragment_forecast));
+        forecastFragment.setUseTodayLayout(!mTwoPane);
     }
 
     @Override

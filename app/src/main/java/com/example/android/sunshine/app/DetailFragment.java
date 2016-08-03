@@ -177,6 +177,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
             String description = cursor.getString(COL_WEATHER_DESC);
             mDescriptionView.setText(description);
+            mIconView.setContentDescription(description);
 
             boolean isMetric = Utility.isMetric(context);
 
